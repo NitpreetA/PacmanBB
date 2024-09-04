@@ -1,0 +1,50 @@
+{
+	"images": [{
+		"name": "pac-man",
+		"path": "./assets/images/Pac-Man_Sprite_Sheet.png",
+		"width": 227,
+		"height": 160
+	},
+	{
+		"name": "tile-set",
+		"path": "./assets/assets/tileset.png",
+		"width": 357,
+		"height": 294
+	}
+
+	],
+	"fonts": [],
+	"sounds": [
+		{
+			"name": "snort",
+			"path": "./assets/sounds/Snort.wav",
+			"size": 5,
+			"volume": 1
+		},
+		{
+			"name": "eat",
+			"path": "./assets/sounds/eating.mp3",
+			"size": 5,
+			"volume": 1
+		},
+		{
+			"name": "music",
+			"path": "./assets/sounds/music.wav",
+			"size": 1,
+			"volume": 1
+		},
+		{
+			"name": "level",
+			"path": "./assets/sounds/level.wav",
+			"size": 1,
+			"volume": 1
+		},
+		{
+			"name": "ghostDeath",
+			"path": "./assets/sounds/ghostDeath.wav",
+			"size": 5,
+			"volume": 1
+		}
+	
+	]
+}

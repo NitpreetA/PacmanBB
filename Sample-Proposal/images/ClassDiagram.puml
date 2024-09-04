@@ -1,0 +1,87 @@
+@startuml Pac Man On Crack Diagram
+
+skinparam monochrome true
+hide empty members
+
+class PlayState {
+    room
+    ghosts
+    pacman
+    enter()
+    exit()
+    update(dt)
+    render()
+}
+
+class Entity {
+    sprites
+    animation
+    update(dt)
+    render()
+}
+
+class GameObject {
+    sprites
+    animation
+    isConsumable
+    isSolid
+    isCollidable
+    update(dt)
+    render()
+}
+
+class Ghost {
+    triggerSlowDown(time)
+}
+
+class PacMan {
+    triggerPebbleSpawner(time)
+    triggerSpeedBoost(time)
+}
+
+class Room {
+    tiles
+    powerups
+    update(dt)
+    render()
+}
+
+class Tile {
+    position
+    dimensions
+    type
+    update(dt)
+    render()
+}
+
+class Powerup {
+    position
+    type
+}
+
+class GhostFactory {
+    createInstance(x, y, type)
+}
+
+class PowerupFactory {
+    createInstance(x, y, type)
+}
+
+class TileFactory {
+    createInstance(x, y, tileType)
+}
+
+PlayState "1" -- "1" Room
+PlayState "1" -- "1" PacMan
+PlayState "1" -- "3" Ghost
+Room "1" -- "0..*" Powerup
+PacMan --|> Entity
+Ghost --|> Entity
+Powerup --|> GameObject
+Room "1" -- "*" Tile
+
+Ghost -- GhostFactory
+Powerup -- PowerupFactory
+Tile -- TileFactory
+
+@enduml
